@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
-const App=() => {
-
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -31,19 +31,19 @@ const App=() => {
     },
   ];
 
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h2", {}, "Lets Get Started!"),
-    React.createElement(Expenses, { items: expenses })
-  );
-
-  // return (
-  //   <div>
-  //     <h2>Let's get started!</h2>
-  //     <Expenses items={expenses}/>
-  //   </div>
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h2", {}, "Lets Get Started!"),
+  //   React.createElement(Expenses, { items: expenses })
   // );
-}
+
+  return (
+    <div>
+      <NewExpense/>
+      <Expenses items={expenses} />
+    </div>
+  );
+};
 
 export default App;
